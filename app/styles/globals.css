@@ -124,10 +124,25 @@ img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
 .service-card h3 { margin: 0; color: #ffffff; }
 .service-icon { font-size: 32px; color: #ffffff; }
 
-.scroller { display: grid; grid-auto-flow: column; grid-auto-columns: 260px; gap: 16px; overflow-x: auto; padding-bottom: 6px; max-width: calc(3 * 260px + 2 * 16px); margin: 0 auto; }
-.scroller::-webkit-scrollbar { height: 8px; }
-.scroller::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
-.scroller-item { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; }
+/* Carousel Container */
+.carousel-container { position: relative; max-width: calc(3 * 260px + 2 * 16px); margin: 0 auto; }
+
+/* Scroller */
+.scroller { display: grid; grid-auto-flow: column; grid-auto-columns: 260px; gap: 16px; overflow-x: hidden; padding-bottom: 6px; scroll-behavior: smooth; }
+.scroller::-webkit-scrollbar { display: none; }
+.scroller-item { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; min-height: 240px; }
+
+/* Navigation Buttons */
+.carousel-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255, 255, 255, 0.9); border: 1px solid var(--border); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; color: var(--text); cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+.carousel-nav:hover { background: var(--primary); color: white; transform: translateY(-50%) scale(1.1); }
+.carousel-nav-prev { left: -50px; }
+.carousel-nav-next { right: -50px; }
+
+/* Carousel Indicators */
+.carousel-indicators { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.carousel-indicator { width: 10px; height: 10px; border-radius: 50%; border: none; background: #cbd5e1; cursor: pointer; transition: all 0.2s ease; }
+.carousel-indicator:hover { background: #94a3b8; }
+.carousel-indicator.active { background: var(--primary); transform: scale(1.2); }
 
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .gallery-item { background: transparent; border: 0; padding: 0; cursor: zoom-in; }

@@ -257,3 +257,146 @@ img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
   .map-stats { gap: 30px; flex-direction: column; align-items: center; }
 }
 
+
+/* Project Locations Styles */
+.projects-locations-container { padding: 60px 0; background: var(--bg-alt); }
+
+.locations-header { text-align: center; margin-bottom: 50px; }
+.locations-header h2 { font-size: 32px; margin: 0 0 12px; color: var(--text); }
+.locations-header p { color: var(--muted); font-size: 16px; margin: 0; max-width: 600px; margin: 0 auto; }
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.location-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary);
+}
+
+.location-header {
+  margin-bottom: 16px;
+}
+
+.location-header h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.location-area {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.location-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.location-type {
+  color: var(--muted);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.projects-count {
+  text-align: right;
+}
+
+.count-number {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.count-label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.location-services {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.location-services span {
+  background: var(--bg);
+  color: var(--muted);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+}
+
+.locations-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.locations-stats .stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.locations-stats .stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+}
+
+.locations-stats .stat-label {
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .locations-grid { grid-template-columns: 1fr; }
+  .locations-stats { gap: 40px; }
+  .locations-stats .stat-number { font-size: 28px; }
+  .locations-header h2 { font-size: 24px; }
+  .projects-locations-container { padding: 40px 0; }
+}
+
+@media (max-width: 600px) {
+  .locations-stats { gap: 30px; flex-direction: column; align-items: center; }
+}
+

@@ -6,6 +6,10 @@ import { Differentiators } from "./sections/Differentiators";
 import { Testimonials } from "./sections/Testimonials";
 import { Gallery } from "./sections/Gallery";
 import { Footer } from "./sections/Footer";
+import dynamic from "next/dynamic";
+
+// Import the project locations component
+import ProjectLocations from './components/ProjectLocations';
 
 export default function HomePage() {
   return (
@@ -17,6 +21,9 @@ export default function HomePage() {
         <Differentiators />
         <Testimonials />
         <Gallery />
+        <section>
+          <ProjectLocations />
+        </section>
         <section className="cta">
           <div className="container">
             <h2>From Concept to Creation – Transforming Your Home</h2>

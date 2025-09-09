@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
 
 // Define the project locations
 const projectLocations = [
@@ -18,22 +17,22 @@ const projectLocations = [
   { name: 'Jumeirah Park', coordinates: [25.0580, 55.1820] as [number, number], projects: 13 },
 ];
 
-// Dynamically import map components to avoid SSR issues
-const MapContainer = dynamic(() => import('react-leaflet').then(mod => ({ default: mod.MapContainer })), { ssr: false });
-const TileLayer = dynamic(() => import('react-leaflet').then(mod => ({ default: mod.TileLayer })), { ssr: false });
-const Marker = dynamic(() => import('react-leaflet').then(mod => ({ default: mod.Marker })), { ssr: false });
-const Popup = dynamic(() => import('react-leaflet').then(mod => ({ default: mod.Popup })), { ssr: false });
-
 const ProjectsMap = () => {
-  const [leafletLoaded, setLeafletLoaded] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [mapComponents, setMapComponents] = useState<any>(null);
 
   useEffect(() => {
-    // Load Leaflet CSS and configure default markers
-    const loadLeaflet = async () => {
-      if (typeof window !== 'undefined') {
-        const L = await import('leaflet');
+    setMounted(true);
+    
+    const loadMapComponents = async () => {
+      try {
+        const [leaflet, reactLeaflet] = await Promise.all([
+          import('leaflet'),
+          import('react-leaflet')
+        ]);
         
         // Fix default marker icons
+        const L = leaflet;
         delete (L.Icon.Default.prototype as any)._getIconUrl;
         L.Icon.Default.mergeOptions({
           iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -41,14 +40,23 @@ const ProjectsMap = () => {
           shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
         });
         
-        setLeafletLoaded(true);
+        setMapComponents({
+          MapContainer: reactLeaflet.MapContainer,
+          TileLayer: reactLeaflet.TileLayer,
+          Marker: reactLeaflet.Marker,
+          Popup: reactLeaflet.Popup,
+        });
+      } catch (error) {
+        console.error('Failed to load map components:', error);
       }
     };
 
-    loadLeaflet();
-  }, []);
+    if (mounted) {
+      loadMapComponents();
+    }
+  }, [mounted]);
 
-  if (!leafletLoaded) {
+  if (!mounted || !mapComponents) {
     return (
       <div className="map-loading">
         <div className="loading-spinner">Loading Interactive Map...</div>
@@ -56,7 +64,7 @@ const ProjectsMap = () => {
     );
   }
 
-  // Dubai center coordinates
+  const { MapContainer, TileLayer, Marker, Popup } = mapComponents;
   const dubaiCenter: [number, number] = [25.0657, 55.2090];
 
   return (

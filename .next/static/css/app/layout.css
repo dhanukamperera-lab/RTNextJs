@@ -15,7 +15,9 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: radial-gradient(1200px 800px at 20% -10%, #e6faff, var(--bg)); }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif; color: var(--text); background: radial-gradient(1200px 800px at 20% -10%, #e6faff, var(--bg)); }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
 .scroller-item img { object-fit: contain; max-height: 200px; margin: 0 auto; }
@@ -24,7 +26,7 @@ img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
 
 .navbar { position: -webkit-sticky; position: sticky; top: 0; z-index: 30; background: #ffffff; border-bottom: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.5px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: 0.5px; }
 .brand-logo { height: 36px; width: auto; display: block; }
 .nav-links { display: flex; gap: 20px; align-items: center; }
 .nav-links a { color: #111827; }
@@ -109,12 +111,12 @@ img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
 }
 .hero-overlay { position: absolute; inset: 0; background: url('/images/hero-pattern.svg'); opacity: 0.08; }
 .hero-inner { position: relative; z-index: 1; text-align: center; }
-.hero h1 { font-size: 48px; margin: 0 0 12px; letter-spacing: -0.02em; }
+.hero h1 { font-family: 'Poppins', sans-serif; font-size: 56px; font-weight: 800; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.1; }
 .hero p { color: var(--muted); margin: 0 0 24px; }
 
 .section { padding: 72px 0; }
 .section.alt { background: #f1f5f9; }
-.section-title { font-size: 28px; margin: 0 0 12px; text-align: center; }
+.section-title { font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; margin: 0 0 16px; text-align: center; letter-spacing: -0.02em; line-height: 1.2; }
 .section-subtitle { color: var(--muted); margin: 0 0 28px; }
 
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); grid-gap: 16px; gap: 16px; }
@@ -399,6 +401,309 @@ img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
 
 @media (max-width: 600px) {
   .locations-stats { gap: 30px; flex-direction: column; align-items: center; }
+}
+
+
+/* Contact Page Styles */
+.contact-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+  color: white;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  opacity: 0.3;
+}
+
+.contact-hero-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-hero h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  margin: 0 0 20px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.contact-hero p {
+  font-size: 20px;
+  opacity: 0.95;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-section {
+  padding: 80px 0;
+  background: var(--bg-alt);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 24px;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+
+.contact-method-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-method-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-method-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+  border-color: var(--primary);
+}
+
+.contact-method-card:hover::before {
+  opacity: 0.03;
+}
+
+.contact-method-card:hover .contact-icon {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.contact-method-card:hover .contact-arrow {
+  transform: translateX(8px);
+  color: var(--primary);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+}
+
+.contact-icon.whatsapp {
+  background: linear-gradient(135deg, #25d366, #1ebe57);
+  color: white;
+}
+
+.contact-info {
+  flex: 1 1;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+
+.contact-info p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.contact-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  display: block;
+}
+
+.contact-arrow {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.service-areas-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.service-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 32px;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.area-category {
+  text-align: center;
+}
+
+.area-category h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.area-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.area-list span {
+  background: var(--bg);
+  color: var(--muted);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.area-list span:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.contact-cta {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 80px 0;
+  position: relative;
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.cta-content p {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: white;
+  border: none;
+}
+
+.button.secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.button.secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 36px;
+  }
+  
+  .contact-hero p {
+    font-size: 18px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-method-card {
+    padding: 24px;
+  }
+  
+  .service-areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .cta-content h2 {
+    font-size: 28px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 

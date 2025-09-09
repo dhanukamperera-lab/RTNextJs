@@ -166,3 +166,94 @@ img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
 }
 
 
+
+/* Import Leaflet CSS */
+@import "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css";
+
+/* Projects Map Styles */
+.projects-map-container { padding: 60px 0; background: var(--bg-alt); }
+
+.map-header { text-align: center; margin-bottom: 40px; }
+.map-header h2 { font-size: 32px; margin: 0 0 12px; color: var(--text); }
+.map-header p { color: var(--muted); font-size: 16px; margin: 0; max-width: 600px; margin: 0 auto; }
+
+.map-wrapper { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  border-radius: 16px; 
+  overflow: hidden; 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.leaflet-map { 
+  height: 500px !important; 
+  width: 100% !important; 
+  z-index: 1;
+}
+
+.map-loading {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.loading-spinner {
+  color: var(--muted);
+  font-size: 16px;
+  text-align: center;
+}
+
+.map-popup h3 {
+  margin: 0 0 8px;
+  color: var(--primary-strong);
+  font-size: 16px;
+}
+
+.map-popup p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.map-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .map-stats { gap: 40px; }
+  .stat-number { font-size: 28px; }
+  .map-header h2 { font-size: 24px; }
+  .projects-map-container { padding: 40px 0; }
+  .map-stats { gap: 30px; flex-direction: column; align-items: center; }
+}
+

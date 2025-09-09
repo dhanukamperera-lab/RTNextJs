@@ -2,12 +2,18 @@
 import { useState } from "react";
 
 const projectImages = [
-  "/images/project1.svg",
-  "/images/project2.svg",
-  "/images/project3.svg",
-  "/images/project4.svg",
-  "/images/project5.svg",
-  "/images/project6.svg"
+  "/images/project1.jpeg",
+  "/images/project2.jpeg",
+  "/images/project3.jpeg",
+  "/images/project4.jpeg",
+  "/images/project5.jpeg",
+  "/images/project6.jpeg",
+  "/images/project3.jpeg",
+  "/images/project8.jpeg",
+  "/images/project9.jpeg",
+  "/images/project1.jpeg",
+  "/images/project2.jpeg",
+  "/images/project7.jpeg",
 ];
 
 export function Gallery() {
@@ -16,10 +22,16 @@ export function Gallery() {
     <section id="projects" className="section">
       <div className="container">
         <h2 className="section-title">View Our Projects</h2>
-        <p className="section-subtitle">Showcasing completed projects to demonstrate our capabilities</p>
+        <p className="section-subtitle">
+          Showcasing completed projects to demonstrate our capabilities
+        </p>
         <div className="gallery-grid">
           {projectImages.map((src) => (
-            <button key={src} className="gallery-item" onClick={() => setActive(src)}>
+            <button
+              key={src}
+              className="gallery-item"
+              onClick={() => setActive(src)}
+            >
               <img src={src} alt="Project" loading="lazy" />
             </button>
           ))}
@@ -33,5 +45,3 @@ export function Gallery() {
     </section>
   );
 }
-
-

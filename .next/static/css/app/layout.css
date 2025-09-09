@@ -317,9 +317,6 @@ img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
 }
 
 .location-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 16px;
 }
 

@@ -2,22 +2,21 @@
 
 // Define the project locations with enhanced data
 const projectLocations = [
-  { name: 'The Meadows', projects: 15, area: 'Emirates Living', type: 'Villa Community' },
-  { name: 'The Springs', projects: 12, area: 'Emirates Living', type: 'Villa Community' },
-  { name: 'Damac Hills', projects: 8, area: 'Southern Dubai', type: 'Golf Community' },
-  { name: 'Arabian Ranches', projects: 18, area: 'Sheikh Mohammed Bin Zayed Road', type: 'Gated Community' },
-  { name: 'Dubai Hills', projects: 22, area: 'Al Khail Road', type: 'Mixed Development' },
-  { name: 'JVT', projects: 14, area: 'Sheikh Zayed Road', type: 'Modern Community' },
-  { name: 'The Lakes', projects: 10, area: 'Emirates Living', type: 'Lakeside Villas' },
-  { name: 'Palm Jumeirah', projects: 7, area: 'Coastal Dubai', type: 'Luxury Island' },
-  { name: 'Mudon', projects: 9, area: 'Al Khail Road', type: 'Family Community' },
-  { name: 'Mira', projects: 6, area: 'Reem Community', type: 'Affordable Housing' },
-  { name: 'Victory Heights', projects: 11, area: 'Sports City', type: 'Golf Community' },
-  { name: 'Jumeirah Park', projects: 13, area: 'Al Khail Road', type: 'Family Community' },
+  { name: 'The Meadows', area: 'Emirates Living', type: 'Villa Community' },
+  { name: 'The Springs', area: 'Emirates Living', type: 'Villa Community' },
+  { name: 'Damac Hills', area: 'Southern Dubai', type: 'Golf Community' },
+  { name: 'Arabian Ranches', area: 'Sheikh Mohammed Bin Zayed Road', type: 'Gated Community' },
+  { name: 'Dubai Hills', area: 'Al Khail Road', type: 'Mixed Development' },
+  { name: 'JVT', area: 'Sheikh Zayed Road', type: 'Modern Community' },
+  { name: 'The Lakes', area: 'Emirates Living', type: 'Lakeside Villas' },
+  { name: 'Palm Jumeirah', area: 'Coastal Dubai', type: 'Luxury Island' },
+  { name: 'Mudon', area: 'Al Khail Road', type: 'Family Community' },
+  { name: 'Mira', area: 'Reem Community', type: 'Affordable Housing' },
+  { name: 'Victory Heights', area: 'Sports City', type: 'Golf Community' },
+  { name: 'Jumeirah Park', area: 'Al Khail Road', type: 'Family Community' },
 ];
 
 const ProjectLocations = () => {
-  const totalProjects = projectLocations.reduce((sum, loc) => sum + loc.projects, 0);
   const communities = projectLocations.length;
 
   return (
@@ -36,10 +35,6 @@ const ProjectLocations = () => {
             </div>
             <div className="location-details">
               <div className="location-type">{location.type}</div>
-              <div className="projects-count">
-                <span className="count-number">{location.projects}</span>
-                <span className="count-label">completed projects</span>
-              </div>
             </div>
             <div className="location-services">
               <span>Interior Design</span>
@@ -56,7 +51,7 @@ const ProjectLocations = () => {
           <span className="stat-label">Communities Served</span>
         </div>
         <div className="stat-item">
-          <span className="stat-number">{totalProjects}+</span>
+          <span className="stat-number">25+</span>
           <span className="stat-label">Total Projects</span>
         </div>
         <div className="stat-item">

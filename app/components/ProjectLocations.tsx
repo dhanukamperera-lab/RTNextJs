@@ -1,5 +1,30 @@
 "use client";
 
+// All available services from RanasTech
+const allServices = [
+  "AC Services",
+  "Maintenance", 
+  "MEP Services",
+  "House Fit-Out",
+  "Painting",
+  "Gypsum Installation",
+  "Carpentry",
+  "Tiling & Flooring",
+  "Handyman Services",
+  "Cleaning Services",
+  "Outdoor Maintenance"
+];
+
+// Function to get random services for each location
+const getRandomServices = (locationIndex: number) => {
+  // Use location index as seed for consistent randomization
+  const seed = locationIndex + 1;
+  const shuffled = [...allServices].sort(() => 0.5 - Math.sin(seed * 1000));
+  // Return 2-3 random services
+  const count = 2 + (seed % 2); // Will give either 2 or 3 services
+  return shuffled.slice(0, count);
+};
+
 // Define the project locations with enhanced data
 const projectLocations = [
   { name: "The Meadows", area: "Emirates Living", type: "Villa Community" },
@@ -44,9 +69,9 @@ const ProjectLocations = () => {
               <div className="location-type">{location.type}</div>
             </div>
             <div className="location-services">
-              <span>Interior Design</span>
-              <span>Maintenance</span>
-              <span>Fit-out</span>
+              {getRandomServices(index).map((service, serviceIndex) => (
+                <span key={serviceIndex}>{service}</span>
+              ))}
             </div>
           </div>
         ))}

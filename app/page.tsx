@@ -26,7 +26,7 @@ export default function HomePage() {
         </section>
         <section className="cta">
           <div className="container">
-            <h2>From Concept to Creation – Transforming Your Home</h2>
+            <h2 className="floating">From Concept to Creation – <span className="gradient-text">Transforming Your Home</span></h2>
             <Link className="button" href="/contact">Let&apos;s Bring Your Vision to Life</Link>
           </div>
         </section>

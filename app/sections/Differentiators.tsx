@@ -8,10 +8,10 @@ export function Differentiators() {
   return (
     <section id="why-us" className="section alt">
       <div className="container">
-        <h2 className="section-title">What Makes Us Different</h2>
+        <h2 className="section-title gradient-text">What Makes Us Different</h2>
         <div className="cards-grid three">
           {points.map((p) => (
-            <div key={p.title} className="card">
+            <div key={p.title} className="card differentiator-card floating">
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
             </div>

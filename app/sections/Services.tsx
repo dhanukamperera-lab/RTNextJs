@@ -16,7 +16,7 @@ export function Services() {
   return (
     <section id="services" className="section">
       <div className="container">
-        <h2 className="section-title">Our Services</h2>
+        <h2 className="section-title gradient-text">Our Services</h2>
         <p className="section-subtitle">Premium solutions delivered by trusted experts in Dubai</p>
         <div className="cards-grid">
           {services.map((s) => (

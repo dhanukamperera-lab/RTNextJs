@@ -37,7 +37,7 @@ const projectLocations = [
   },
   { name: "Dubai Hills", area: "Al Khail Road", type: "Mixed Development" },
   { name: "JVT", area: "Sheikh Zayed Road", type: "Modern Community" },
-  { name: "The Lakes", area: "Emirates Living", type: "Lakeside Villas" },
+  { name: "The Lakes", area: "Emirates  Living", type: "Lakeside Villas" },
   { name: "Palm Jumeirah", area: "Coastal Dubai", type: "Luxury Island" },
   { name: "Mudon", area: "Al Khail Road", type: "Family Community" },
   { name: "Mira", area: "Reem Community", type: "Affordable Housing" },

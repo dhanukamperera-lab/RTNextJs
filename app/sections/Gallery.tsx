@@ -19,9 +19,11 @@ export function Gallery() {
     <section id="projects" className="section">
       <div className="container">
         <h2 className="section-title gradient-text">View Our Projects</h2>
-        <p className="section-subtitle">
-          Showcasing completed projects to demonstrate our capabilities
-        </p>
+        <center>
+          <p className="section-subtitle">
+            Showcasing completed projects to demonstrate our capabilities
+          </p>
+        </center>
         <div className="gallery-grid">
           {projectImages.map((src, index) => (
             <button
